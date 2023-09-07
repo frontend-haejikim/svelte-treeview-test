@@ -1,7 +1,7 @@
 import { derived, writable, type Writable } from 'svelte/store'
 
 import { TOOTH_NUMBER_TYPE } from '$const'
-import treeMap from '../dummy/tree.json'
+import treeMap from '../tree.json'
 
 export interface TreeNode {
   key: string

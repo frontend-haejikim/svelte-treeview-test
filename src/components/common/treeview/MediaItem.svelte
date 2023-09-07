@@ -1,6 +1,7 @@
 <script lang="ts">
   import { MEDIA_TYPE } from '$const'
   import type { TreeNode } from '$store/treeview'
+  import { isShowMediaViewer } from '$store/ui'
   import IconButtonRenderer from '../IconButtonRenderer.svelte'
   import NeedSync from '../svg/NeedSync.svelte'
   import Visibility from '../svg/Visibility.svelte'
@@ -10,15 +11,10 @@
 
   const onClickMediaItem = () => {}
 
-  $: currentMedia = {
-    ...item,
-    fileUuid: '',
-  } as TreeNode
+  $: currentMedia = { ...item, fileUuid: '' } as TreeNode
 
   $: disabled =
     item.isPreviewAble === false || item.mediaType === MEDIA_TYPE.PARSE_FAILED
-
-  $: isShowMediaViewer = false
 </script>
 
 <div
@@ -30,7 +26,7 @@
     <div
       class="name-entity"
       class:disabled
-      class:current-media={isShowMediaViewer &&
+      class:current-media={$isShowMediaViewer &&
         currentMedia.fileUuid === item.fileUuid}
     >
       {displayName}
@@ -42,7 +38,7 @@
         <NeedSync />
       </IconButtonRenderer>
     {/if}
-    {#if isShowMediaViewer && currentMedia.fileUuid === item.fileUuid}
+    {#if $isShowMediaViewer && currentMedia.fileUuid === item.fileUuid}
       <IconButtonRenderer xxs>
         <Visibility />
       </IconButtonRenderer>
@@ -115,16 +111,6 @@
           }
         }
 
-        &.hover {
-          animation: on-hover-text $anim-duration;
-          transform: $transform-after-anim-text;
-        }
-
-        &.mouseout {
-          animation: on-mouseout-text $anim-duration;
-          transform: $transform-before-anim-text;
-        }
-
         &.disabled {
           color: #6a6a6a;
         }
@@ -149,24 +135,6 @@
           opacity: 0;
         }
       }
-
-      .slider {
-        position: absolute;
-        width: calc(100% - 0.4rem) !important;
-        bottom: 0.4rem;
-        margin: 0;
-        opacity: 0;
-
-        &.hover {
-          opacity: 1;
-          animation: on-hover-slider $anim-duration;
-        }
-
-        &.mouseout {
-          opacity: 0;
-          animation: on-mouseout-slider $anim-duration;
-        }
-      }
     }
 
     .group-item-button {
@@ -174,10 +142,6 @@
       align-items: center;
       gap: 0.6rem;
       margin-right: 0.8rem;
-
-      > button {
-        margin-left: 0 !important;
-      }
     }
   }
 </style>

@@ -12,7 +12,6 @@
   import Plus from '../svg/Plus.svelte'
   import IconButtonRenderer from '../IconButtonRenderer.svelte'
   import MediaItem from './MediaItem.svelte'
-  import MeshItem from './MeshItem.svelte'
 
   export let item: TreeNode = {
     key: '',
@@ -33,8 +32,6 @@
   const onBlur = () => {}
 
   const formatToothNumber = (toothNumber: number) => {
-    // Shell에는 US 기준으로 저장되어 있다.
-    // if (!toothNumber) return 'base'
     if (toothNumber > 100) return toothNumber - 100
     if ($treeviewStore.toothNumberType === TOOTH_NUMBER_TYPE.FDI) {
       return Utils.getFdiNumber(toothNumber)
@@ -56,7 +53,6 @@
   }
 
   const formatToothNumberFromFilename = (toothNumber: number) => {
-    // File 이름에는 FDI 기준으로 저장되어 있다.
     if (isNaN(toothNumber)) return toothNumber
     if ($treeviewStore.toothNumberType === TOOTH_NUMBER_TYPE.US) {
       return Utils.getUsNumber(toothNumber)
@@ -116,7 +112,6 @@
         }
         case 'DefaultFileName':
           itemDisplayName = refinedFileName
-          // NOTE: Apps산출물 중 3D Data의 경우 확장자를 보여주지 않음 (COL-17332)
           if (viewRoot?.startsWith('Medit_')) {
             let fileName = refinedFileName
             const dotIndex = fileName.lastIndexOf('.')
@@ -147,7 +142,7 @@
 
 <li class={containerClass}>
   <div>
-    {#if depth !== 0}
+    {#if depth !== 0 && children.length === 0}
       <div style="width: {depth * 2 * 0.8}rem; flex: 0 0 auto" />
     {/if}
 
@@ -171,11 +166,7 @@
         </IconButtonRenderer>
       {/if}
 
-      {#if item.mediaType}
-        <MediaItem {item} {displayName} />
-      {:else}
-        <MeshItem />
-      {/if}
+      <MediaItem {item} {displayName} />
     </div>
   </div>
 
@@ -219,10 +210,6 @@
       background-color: #fff !important;
     }
 
-    > img {
-      cursor: pointer;
-    }
-
     > :global(button) {
       height: 100%;
       margin: 0 0.8rem;
@@ -232,43 +219,6 @@
     & :global(.no-child) {
       visibility: hidden;
       width: auto;
-    }
-
-    .download-failed {
-      position: absolute;
-      margin-left: 4.4rem;
-      margin-top: 0.2rem;
-      color: gray;
-    }
-  }
-
-  .group-visibility {
-    display: flex;
-    align-items: center;
-
-    > img {
-      width: 2.4rem;
-      cursor: pointer;
-    }
-
-    .btn-context {
-      position: absolute;
-      right: -3rem;
-      opacity: 0;
-
-      .container-button {
-        padding: 0 0.4rem;
-      }
-
-      &.hover {
-        opacity: 1;
-        animation: on-hover-slider $anim-duration;
-      }
-
-      &.mouseout {
-        opacity: 0;
-        animation: on-mouseout-slider $anim-duration;
-      }
     }
   }
 </style>

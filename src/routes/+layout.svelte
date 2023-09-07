@@ -14,5 +14,6 @@
 <style lang="scss">
   .container {
     padding: 1.2rem;
+    background-color: #f1f2f6;
   }
 </style>

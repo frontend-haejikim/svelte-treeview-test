@@ -1,8 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  export let xxs: boolean = false
-
   const dispatch = createEventDispatcher()
 
   const handleClick = (e: MouseEvent) => {
@@ -14,7 +12,7 @@
 
 <button class={containerClass} on:click={handleClick} {...$$restProps}>
   <div class="body-button">
-    <div class="md-icon" class:xxs>
+    <div class="md-icon">
       <slot />
     </div>
   </div>
@@ -31,9 +29,7 @@
     user-select: none;
   }
 
-  .md-icon.xxs {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
+  .md-icon {
     padding: 0 !important;
   }
 </style>
