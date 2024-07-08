@@ -19,8 +19,6 @@
 
   export let depth = 0
 
-  export const root = {}
-
   let component
 
   const onFocus = () => {}
