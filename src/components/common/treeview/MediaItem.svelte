@@ -1,33 +1,27 @@
 <script lang="ts">
-  import { MEDIA_TYPE } from '$const'
-  import type { TreeNode } from '$store/treeview'
-  import { isShowMediaViewer } from '$store/ui'
+  import { MEDIA_TYPE } from '$/const'
+  import type { TreeNode } from '$/store/treeview'
+  import { isShowMediaViewer } from '$/store/ui'
   import IconButtonRenderer from '../IconButtonRenderer.svelte'
   import NeedSync from '../svg/NeedSync.svelte'
   import Visibility from '../svg/Visibility.svelte'
 
   export let item: TreeNode
-  export let displayName: string
+  export let displayName = ''
 
   const onClickMediaItem = () => {}
 
   $: currentMedia = { ...item, fileUuid: '' } as TreeNode
 
-  $: disabled =
-    item.isPreviewAble === false || item.mediaType === MEDIA_TYPE.PARSE_FAILED
+  $: disabled = item.isPreviewAble === false || item.mediaType === MEDIA_TYPE.PARSE_FAILED
 </script>
 
-<div
-  class="group-entity-body media-item"
-  role="presentation"
-  on:click={onClickMediaItem}
->
+<div class="group-entity-body media-item" role="presentation" on:click={onClickMediaItem}>
   <div class="group-name-entity">
     <div
       class="name-entity"
       class:disabled
-      class:current-media={$isShowMediaViewer &&
-        currentMedia.fileUuid === item.fileUuid}
+      class:current-media={$isShowMediaViewer && currentMedia.fileUuid === item.fileUuid}
     >
       {displayName}
     </div>
@@ -90,8 +84,7 @@
         backface-visibility: initial;
         color: #1b1b1e;
         $transform-before-anim-text: translateX(0) translateY(0) scale(1);
-        $transform-after-anim-text: translateX(-0.2rem) translateY(-0.6rem)
-          scale(0.85);
+        $transform-after-anim-text: translateX(-0.2rem) translateY(-0.6rem) scale(0.85);
         @keyframes on-hover-text {
           0% {
             transform: $transform-before-anim-text;

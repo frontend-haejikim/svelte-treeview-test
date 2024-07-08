@@ -1,13 +1,8 @@
 <script lang="ts">
-  import type { SvelteComponent } from 'svelte'
-
-  import type { TreeNode } from '$store/treeview'
-  import treeviewStore, {
-    toggleShowChildren,
-    findShownChildrenNodes,
-  } from '$store/treeview'
-  import { TOOTH_NUMBER_TYPE, FILE_NAMES } from '$const'
-  import Utils from '$utils'
+  import { TOOTH_NUMBER_TYPE, FILE_NAMES } from '$/const'
+  import type { TreeNode } from '$/store/treeview'
+  import treeviewStore, { toggleShowChildren, findShownChildrenNodes } from '$/store/treeview'
+  import Utils from '$/utils'
   import Minus from '../svg/Minus.svelte'
   import Plus from '../svg/Plus.svelte'
   import IconButtonRenderer from '../IconButtonRenderer.svelte'
@@ -22,11 +17,11 @@
     showOnTreeview: false,
   }
 
-  export let depth: number = 0
+  export let depth = 0
 
-  export const root: Object = {}
+  export const root = {}
 
-  let component: SvelteComponent
+  let component
 
   const onFocus = () => {}
   const onBlur = () => {}
@@ -75,8 +70,7 @@
     const refinedFileName: string =
       fileName
         ?.replace('.' + FILE_NAMES.FILE_SPECIAL_EXTENSION_GENERAL_MEDITMESH, '')
-        ?.replace('.' + FILE_NAMES.FILE_SPECIAL_EXTENSION_CAD_MEDITMESH, '') ||
-      ''
+        ?.replace('.' + FILE_NAMES.FILE_SPECIAL_EXTENSION_CAD_MEDITMESH, '') || ''
     const defaultName = refinedFileName || name
 
     let itemDisplayName = ''
@@ -115,10 +109,7 @@
           if (viewRoot?.startsWith('Medit_')) {
             let fileName = refinedFileName
             const dotIndex = fileName.lastIndexOf('.')
-            if (
-              dotIndex > 0 &&
-              fileName.endsWith(FILE_NAMES.FILE_EXTENSION_MEDITMESH)
-            ) {
+            if (dotIndex > 0 && fileName.endsWith(FILE_NAMES.FILE_EXTENSION_MEDITMESH)) {
               fileName = fileName.slice(0, dotIndex)
             }
             itemDisplayName = fileName
@@ -146,12 +137,7 @@
       <div style="width: {depth * 2 * 0.8}rem; flex: 0 0 auto" />
     {/if}
 
-    <div
-      class="group-entity"
-      class:root={depth === 0}
-      on:focus={onFocus}
-      on:blur={onBlur}
-    >
+    <div class="group-entity" class:root={depth === 0} on:focus={onFocus} on:blur={onBlur}>
       {#if children.length > 0}
         <IconButtonRenderer
           class={children.length === 0 ? 'no-child' : ''}

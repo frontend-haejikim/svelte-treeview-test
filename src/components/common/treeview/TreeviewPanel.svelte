@@ -1,10 +1,6 @@
 <script lang="ts">
-  import treeviewStore, { rootNodes, toggleShowHideAll } from '$store/treeview'
-  import {
-    isShowMeshFileTreeView,
-    desktopTreeviewWidth,
-    toggleShow,
-  } from '$store/ui'
+  import treeviewStore, { rootNodes, toggleShowHideAll } from '$/store/treeview'
+  import { isShowMeshFileTreeView, desktopTreeviewWidth, toggleShow } from '$/store/ui'
   import IconButtonRenderer from '../IconButtonRenderer.svelte'
   import Collapse from '../svg/Collapse.svelte'
   import Expand from '../svg/Expand.svelte'
@@ -14,9 +10,7 @@
 
   $: hasNodes = $rootNodes.length > 0
 
-  $: treeviewWidth = $isShowMeshFileTreeView
-    ? `${$desktopTreeviewWidth}px`
-    : '6.4rem'
+  $: treeviewWidth = $isShowMeshFileTreeView ? `${$desktopTreeviewWidth}px` : '6.4rem'
 </script>
 
 <div

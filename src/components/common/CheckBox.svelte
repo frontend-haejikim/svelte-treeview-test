@@ -1,12 +1,12 @@
 <script lang="ts">
-  export let value: boolean = false
-  export let label: string = ''
-  export let isBold: boolean = false
+  export let value = false
+  export let label = ''
+  export let isBold = false
 
-  export let tabindex: number = 1
-  export let disabled: boolean = false
-  export let reversed: boolean = false
-  export let partial: boolean = false
+  export let tabindex = 1
+  export let disabled = false
+  export let reversed = false
+  export let partial = false
 
   type ChangeEvent = Event & { currentTarget: EventTarget & HTMLInputElement }
 
@@ -27,7 +27,6 @@
     >
       {label}
     </div>
-
     <input
       type="checkbox"
       class:disabled
@@ -73,7 +72,6 @@
 
       &.disabled {
         cursor: default;
-
         &:not(.checked) {
           color: #95969a;
         }

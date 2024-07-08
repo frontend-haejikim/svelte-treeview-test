@@ -8,6 +8,13 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "$/*": ["src/*"],
+      "$/components/*": ["src/components/*"],
+      "$/store/*": ["src/store/*"],
+      "$/const/*": ["src/const/*"]
+    }
   }
 }

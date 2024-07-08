@@ -1,6 +1,6 @@
 <script lang="ts">
-  import CheckBox from '$components/common/CheckBox.svelte'
-  import TreeviewPanel from '$components/common/treeview/TreeviewPanel.svelte'
+  import CheckBox from '$/components/common/CheckBox.svelte'
+  import TreeviewPanel from '$/components/common/treeview/TreeviewPanel.svelte'
 
   let checked1: boolean = false
   let checked2: boolean = false

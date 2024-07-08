@@ -1,6 +1,6 @@
 import { derived, writable, type Writable } from 'svelte/store'
 
-import { TOOTH_NUMBER_TYPE } from '$const'
+import { TOOTH_NUMBER_TYPE } from '$/const'
 import treeMap from '../tree.json'
 
 export interface TreeNode {
@@ -63,8 +63,7 @@ export const toggleShowHideAll = () => {
         default: {
           ..._.tree.default,
           nodes: _.tree.default.nodes.map((node) => {
-            if ('isShowChildren' in node)
-              return { ...node, isShowChildren: !newShowHideAll }
+            if ('isShowChildren' in node) return { ...node, isShowChildren: !newShowHideAll }
 
             return node
           }),
@@ -88,8 +87,7 @@ export const toggleShowChildren = (path: string) => {
       tree: {
         default: {
           nodes: _.tree.default.nodes.map((_) => {
-            if (_.path === path)
-              return { ..._, isShowChildren: !_.isShowChildren }
+            if (_.path === path) return { ..._, isShowChildren: !_.isShowChildren }
 
             return _
           }),
