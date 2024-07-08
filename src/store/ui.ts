@@ -26,14 +26,8 @@ const store: Writable<UIStore> = writable({
   },
 })
 
-export const isShowMeshFileTreeView = derived(
-  store,
-  ($_) => $_.isShow.MeshFileTreeView
-)
-export const isShowGuideModal = derived(
-  store,
-  ($_) => $_.isShow.isShowGuidModal
-)
+export const isShowMeshFileTreeView = derived(store, ($_) => $_.isShow.MeshFileTreeView)
+export const isShowGuideModal = derived(store, ($_) => $_.isShow.isShowGuidModal)
 export const isShowMediaViewer = derived(store, ($_) => $_.isShow.MediaViewer)
 
 export const desktopTreeviewWidth = derived(store, ($_) => $_.treeview.width)

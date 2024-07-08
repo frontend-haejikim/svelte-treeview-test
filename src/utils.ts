@@ -95,104 +95,59 @@ const Utils = {
       }
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)) {
       return 'IndividualWaxup'
     }
 
     return 'MultiDie'
   },
   checkForMaxillaryData(fileName: string) {
-    if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY
-      )
-    ) {
+    if (this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY)) {
       return 'Abutment'
     }
 
-    if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_SCANBODY
-      )
-    ) {
+    if (this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_SCANBODY)) {
       return 'Scanbody'
     }
 
     if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW_SCANBODYINFO
-      )
+      this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW_SCANBODYINFO)
     ) {
       return 'Scanbody'
     }
 
-    if (
-      this.isMarginLineFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY
-      )
-    ) {
+    if (this.isMarginLineFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY)) {
       return 'MarginLine'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_SCANBODY
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_SCANBODY)) {
       return 'ScanbodyBase'
     }
 
     if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_INITIALMODEL_MAXILLARY
-      )
+      this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_INITIALMODEL_MAXILLARY)
     ) {
       return 'PreOP'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_DENTURE
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY_DENTURE)) {
       return 'Denture'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW)) {
       return 'Base'
     }
 
     if (
       this.isMeditMeshFileEndsWith(
         fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW +
-          '-' +
-          FILE_NAMES.FILE_SPECIAL_NAME_GINGIVA
+        FILE_NAMES.FILE_SPECIAL_NAME_UPPERJAW + '-' + FILE_NAMES.FILE_SPECIAL_NAME_GINGIVA
       )
     ) {
       return 'Gingiva'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MAXILLARY)) {
       return 'Base'
     }
 
@@ -205,27 +160,15 @@ const Utils = {
       return 'Unknown'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_SCANBODY
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_SCANBODY)) {
       return 'ScanbodyBaseTScan'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_STUDYMODEL
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_STUDYMODEL)) {
       return 'PreOP'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)) {
       return 'Waxup'
     }
 
@@ -239,95 +182,54 @@ const Utils = {
     return 'Unknown'
   },
   checkForMandibleData(fileName: string) {
-    if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR
-      )
-    ) {
+    if (this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR)) {
       return 'Abutment'
     }
 
     if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_SCANBODY
-      )
+      this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_SCANBODY)
     ) {
       return 'Scanbody'
     }
 
     if (
-      this.isLibraryInfoFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_LOWERJAW_SCANBODYINFO
-      )
+      this.isLibraryInfoFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_LOWERJAW_SCANBODYINFO)
     ) {
       return 'Scanbody'
     }
 
-    if (
-      this.isMarginLineFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR
-      )
-    ) {
+    if (this.isMarginLineFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR)) {
       return 'MarginLine'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_SCANBODY
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_SCANBODY)) {
       return 'ScanbodyBase'
     }
 
     if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_INITIALMODEL_MANDIBLE
-      )
+      this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_INITIALMODEL_MANDIBLE)
     ) {
       return 'PreOP'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_DENTURE
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR_DENTURE)) {
       return 'Denture'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_LOWJAW
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_LOWJAW)) {
       return 'Base'
     }
 
     if (
       this.isMeditMeshFileEndsWith(
         fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_LOWJAW +
-          '-' +
-          FILE_NAMES.FILE_SPECIAL_NAME_GINGIVA
+        FILE_NAMES.FILE_SPECIAL_NAME_LOWJAW + '-' + FILE_NAMES.FILE_SPECIAL_NAME_GINGIVA
       )
     ) {
       return 'Gingiva'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MANDIBULAR)) {
       return 'Base'
     }
 
@@ -340,27 +242,15 @@ const Utils = {
       return 'Unknown'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_SCANBODY
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_SCANBODY)) {
       return 'ScanbodyBaseTScan'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_STUDYMODEL
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_STUDYMODEL)) {
       return 'PreOP'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXUP)) {
       return 'Waxup'
     }
 
@@ -374,48 +264,23 @@ const Utils = {
     return 'Unknown'
   },
   checkForOcculusionData(fileName: string) {
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_FIRST_OCCLUSIOIN
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_FIRST_OCCLUSIOIN)) {
       return 'FirstBase'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_SECOND_OCCLUSIOIN
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_SECOND_OCCLUSIOIN)) {
       return 'SecondBase'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_OCCLUSIOIN
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_OCCLUSIOIN)) {
       return 'Base'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_WAXRIM
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_WAXRIM)) {
       return 'Aestheticplate'
     }
 
-    if (
-      this.isMeditMeshFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_NAME_MOVEMENTMARKER
-      )
-    ) {
+    if (this.isMeditMeshFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_NAME_MOVEMENTMARKER)) {
       return 'MovementMarker'
     }
 
@@ -430,9 +295,7 @@ const Utils = {
   },
   checkForFaceImportData(fileName: string) {
     if (
-      fileName
-        .toLowerCase()
-        .endsWith(FILE_NAMES.FILE_EXTENSION_MEDIT_IMPORTED_MESH.toLowerCase())
+      fileName.toLowerCase().endsWith(FILE_NAMES.FILE_EXTENSION_MEDIT_IMPORTED_MESH.toLowerCase())
     ) {
       return 'Imported'
     }
@@ -440,23 +303,14 @@ const Utils = {
     return 'Unknown'
   },
   checkForFaceCTData(fileName: string) {
-    if (
-      fileName
-        .toLowerCase()
-        .endsWith(FILE_NAMES.FILE_EXTENSION_MEDIT_CT_MESH.toLowerCase())
-    ) {
+    if (fileName.toLowerCase().endsWith(FILE_NAMES.FILE_EXTENSION_MEDIT_CT_MESH.toLowerCase())) {
       return 'CT'
     }
 
     return 'Unknown'
   },
   checkForAttachmentData(fileName: string) {
-    if (
-      this.isFileEndsWith(
-        fileName,
-        FILE_NAMES.FILE_SPECIAL_EXTENSION_GENERAL_MEDITMESH
-      )
-    ) {
+    if (this.isFileEndsWith(fileName, FILE_NAMES.FILE_SPECIAL_EXTENSION_GENERAL_MEDITMESH)) {
       return '3DData'
     }
     if (this.isMeditMeshFileEndsWith(fileName, '')) {
@@ -488,27 +342,15 @@ const Utils = {
     return 'Unknown'
   },
   isLibraryInfoFileEndsWith(fileName: string, findString: string) {
-    const compareStr = (
-      findString +
-      '.' +
-      FILE_NAMES.FILE_EXTENSION_LIBRARY_INFO
-    ).toLowerCase()
+    const compareStr = (findString + '.' + FILE_NAMES.FILE_EXTENSION_LIBRARY_INFO).toLowerCase()
     return fileName.toLowerCase().endsWith(compareStr)
   },
   isMeditMeshFileEndsWith(fileName: string, findString: string) {
-    const compareStr = (
-      findString +
-      '.' +
-      FILE_NAMES.FILE_EXTENSION_MEDITMESH
-    ).toLowerCase()
+    const compareStr = (findString + '.' + FILE_NAMES.FILE_EXTENSION_MEDITMESH).toLowerCase()
     return fileName.toLowerCase().endsWith(compareStr)
   },
   isMarginLineFileEndsWith(fileName: string, findString: string) {
-    const compareStr = (
-      findString +
-      '.' +
-      FILE_NAMES.FILE_EXTENSION_MARGINLINE
-    ).toLowerCase()
+    const compareStr = (findString + '.' + FILE_NAMES.FILE_EXTENSION_MARGINLINE).toLowerCase()
     return fileName.toLowerCase().endsWith(compareStr)
   },
   isFileEndsWith(fileName: string, findString: string) {
@@ -536,8 +378,7 @@ const Utils = {
       })
       .filter((toothNum: number) => {
         return (
-          (toothNum >= TOOTH_NUMBER.FDI.UPPER_START &&
-            toothNum <= TOOTH_NUMBER.FDI.LOWER_END) ||
+          (toothNum >= TOOTH_NUMBER.FDI.UPPER_START && toothNum <= TOOTH_NUMBER.FDI.LOWER_END) ||
           this.isMultiDie(toothNum)
         )
       })
@@ -551,10 +392,7 @@ const Utils = {
         !TOOTH_NUMBER.FDI.UPPER_EMPTY.includes(toothNum)
       )
     } else if (type === TOOTH_NUMBER_TYPE.US) {
-      return (
-        TOOTH_NUMBER.US.UPPER_START <= toothNum &&
-        toothNum <= TOOTH_NUMBER.US.UPPER_END
-      )
+      return TOOTH_NUMBER.US.UPPER_START <= toothNum && toothNum <= TOOTH_NUMBER.US.UPPER_END
     }
   },
   isLower(toothNum: number, type = TOOTH_NUMBER_TYPE.FDI) {
@@ -566,10 +404,7 @@ const Utils = {
         !TOOTH_NUMBER.FDI.LOWER_EMPTY.includes(toothNum)
       )
     } else if (type === TOOTH_NUMBER_TYPE.US) {
-      return (
-        TOOTH_NUMBER.US.LOWER_START <= toothNum &&
-        toothNum <= TOOTH_NUMBER.US.LOWER_END
-      )
+      return TOOTH_NUMBER.US.LOWER_START <= toothNum && toothNum <= TOOTH_NUMBER.US.LOWER_END
     }
   },
   getFdiNumber(us: number) {
