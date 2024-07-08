@@ -2,10 +2,10 @@
   import CheckBox from '$/components/common/CheckBox.svelte'
   import TreeviewPanel from '$/components/common/treeview/TreeviewPanel.svelte'
 
-  let checked1: boolean = false
-  let checked2: boolean = false
-  let checked3: boolean = false
-  let checked4: boolean = false
+  let checked1 = false
+  let checked2 = false
+  let checked3 = false
+  let checked4 = false
 </script>
 
 <div style="display: flex;">
@@ -17,12 +17,9 @@
   <div class="group">
     <h3>CheckBox</h3>
     <CheckBox bind:value={checked1} label="복숭아" />
-
     <CheckBox bind:value={checked2} label="복숭아" disabled />
-
     <CheckBox bind:value={checked3} label="복숭아" reversed />
     <span>reversed: {checked1 ? 'Y' : 'N'}</span>
-
     <CheckBox bind:value={checked4} label="복숭아" partial />
   </div>
 </div>
